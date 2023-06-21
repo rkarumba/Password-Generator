@@ -31,7 +31,11 @@ def generate_password(min_length, numbers=True, special_characters= True ):
             meets_criteria = has_number
         if special_characters:
             meets_criteria = meets_criteria and has_special
+           
+    return pwd 
 
-
-
-generate_password(10, True , True)
+min_length = int(input("Enter the minimum length: "))
+has_number = input("Do you want to have numbers (y/n)? ").lower() == "y"
+has_special = input("Do you want special characters (y/n)").lower() == "y"
+pwd = generate_password(min_length, has_number, has_special)
+print("The generated password is:", pwd)
